@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
 export const Img = styled.img`
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0);
+  padding: 10px;
+  border-radius: 10px 10px 25px 25px; 
   object-fit: cover;
   overflow: hidden;
-`
+`;
 
 export const GridContainer = styled.section`
 display: grid;
@@ -24,11 +27,22 @@ row-gap: 3rem;
 `
 export const BlogCard = styled.div`
   border-radius: 10px;
-  box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
+  background: linear-gradient(270deg, #00dbd8 0%, #b133ff 100%);
   width: 400px;
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
+  }
+  &:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    filter: blur(30px);
   }
 `;
 export const TitleContent = styled.div`
@@ -107,6 +121,9 @@ justify-content: space-around;
 padding: 2rem;
 `
 export const Tag = styled.li`
+padding:10px;
+border-radius:10px;
+background:black;
 color: #d8bfbf;
 font-size: 1.5rem;
-`
+`;
